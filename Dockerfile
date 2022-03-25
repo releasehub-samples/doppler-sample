@@ -1,4 +1,20 @@
-FROM alpine:latest
+# Begin build phase
+FROM golang:1.17-alpine AS builder
+
+ADD . /go/src/service
+
+WORKDIR /go/src/service
+
+COPY go.mod ./
+
+RUN go mod download
+
+COPY *.go ./
+
+RUN go build -o /service
+
+# Begin execution phase
+FROM alpine
 
 # Creates a variable that is able to overridden at build time
 ARG DOPPLER_TOKEN
@@ -11,5 +27,10 @@ RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.ke
   echo 'https://packages.doppler.com/public/cli/alpine/any-version/main' | tee -a /etc/apk/repositories && \
   apk add doppler
 
-# Run Doppler and print the environment variables
-CMD ["doppler", "run", "--", "printenv"]
+# Copy the executable from the build phase into the execution image
+COPY --from=builder /service /service
+
+EXPOSE 8080
+
+# Run Doppler in addition to the executable
+CMD [ "doppler", "run", "--", "/service" ]
