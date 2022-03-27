@@ -12,19 +12,24 @@ for feature previews, quality assurance purposes, sales demonstrations, or runni
 
 To start off, we need to [log into Doppler](https://dashboard.doppler.com/).
 
-You'll need to pick a project and then select an environment to pull secrets from.
+You'll need to pick a project and select an environment to pull secrets from.
+
+![Screenshot showing sample environment on Doppler UI](images/image_one.png)
 
 For testing purposes, let's insert a new variable into the selected environment as `TEST_VARIABLE`. Set the value to 
 your first name.
 
-Now, you'll 
-need to [generate a service token](https://docs.doppler.com/docs/service-tokens) from that environment. Copy the 
+![Screenshot showing TEST_VARIABLE with value of Josh](images/image_two.png)
+
+Now, you'll need to [generate a service token](https://docs.doppler.com/docs/service-tokens) from that environment. Copy the 
 generated token somewhere, you'll need it for the next step.
+
+![Screenshot showing service token being generated](images/image_three.png)
 
 ### Release
 You'll need a few things to get your application going.
 
-First things first, fork this repository so that you can create a new Release application with it against your GitHub.
+Fork this repository so that you can create a new Release application with it against your GitHub.
 
 Using your favorite browser, you'll need to [sign into Release](https://app.releasehub.com/auth/login-page).
 
