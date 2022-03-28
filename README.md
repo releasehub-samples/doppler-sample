@@ -1,6 +1,9 @@
 # Managing Secrets in Release with Doppler
 
 Example application showing how you can access your Doppler secrets in an environment being run on the Release platform.
+
+![Diagram of Release + Doppler integration](images/diagram.png)
+
 ## About Release
 
 Release makes it easy to create cloud native full-stack environments with data, on demand. These environments can be used
