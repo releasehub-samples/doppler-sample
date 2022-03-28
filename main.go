@@ -7,12 +7,10 @@ import (
 )
 
 func main() {
-	// Declare a route at / and a handler that prints
-	// the TEST_VARIABLE environment variable set in
-	// Doppler
+	// Declare a route at / and a handler that prints the TEST_VARIABLE environment variable set in Doppler
 	http.HandleFunc(
 		"/", func(w http.ResponseWriter, r *http.Request) {
-			fmt.Fprintf(w, "Hello, %s", os.Getenv("TEST_VARIABLE"))
+			fmt.Fprintf(w, "Hello %s", os.Getenv("TEST_VARIABLE"))
 		},
 	)
 

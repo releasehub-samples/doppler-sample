@@ -1,6 +1,7 @@
 FROM golang:1.17-alpine AS builder
 
-# Creates a variable that is able to overridden at build time
+# Create a variable DOPPLER_TOKEN and assign the Environment Variable DOPPLER_TOKEN equal to the the variable
+# DOPPLER_TOKEN. This variable will be passed in during the build phase as a build argument specified in the Release UI.
 ARG DOPPLER_TOKEN
 ENV DOPPLER_TOKEN=${DOPPLER_TOKEN}
 

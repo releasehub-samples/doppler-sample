@@ -71,7 +71,7 @@ When the environment is done being created, navigate to the newly created enviro
 
 On the right side, you'll find the Hostname URLs. Click on the link next to "service".
 
-![Screenshow showing Hostname URLs](images/image_eleven.png)
+![Screenshot showing Hostname URLs](images/image_eleven.png)
 
 Observe your name being printed to the screen in a friendly greeting. You've successfully pulled environment variables 
 from Doppler into your Release application.
