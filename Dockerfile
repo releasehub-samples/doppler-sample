@@ -1,4 +1,4 @@
-FROM golang:1.17-alpine AS builder
+FROM golang:1.17-alpine
 
 # Create a variable DOPPLER_TOKEN and assign the Environment Variable DOPPLER_TOKEN equal to the the variable
 # DOPPLER_TOKEN. This variable will be passed in during the build phase as a build argument specified in the Release UI.
